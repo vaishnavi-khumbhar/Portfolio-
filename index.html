@@ -1,10 +1,1226 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>My Portfolio</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="data:image/png;base64,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" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: Style
+  * Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
+  * Updated: Jul 02 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body>
-  <h1>Website is working ✅</h1>
-  <p>If you see this, GitHub Pages is fixed.</p>
+<style>
+    .intro-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  z-index: 1;
+}
+.intro-content {
+  position: relative;
+  z-index: 2;
+}
+</style>
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <!-- Uncomment the line below if you also wish to use an text logo -->
+        <!-- <h1 class="sitename">Style</h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+
+        <div class="profile-img">
+          <img src="assets/img/p2.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center active">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.webp" alt=""> -->
+          <h1 class="sitename">Vaishnavi Kumbhar</h1>
+        </a>
+
+        <div class="social-links text-center">
+          <a href="#" class="twitter"><i class="bi bi-github"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#mydigitalcreations">Creations</a></li>
+          <li><a href="#projects">Preojects</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Top Intro Section -->
+    <!-- Top Intro Section with Particles -->
+<section id="intro" class="intro-section text-center text-white d-flex align-items-center">
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <div class="intro-content" data-aos="fade-down" data-aos-delay="100">
+      <span class="badge bg-primary px-3 py-2 mb-3">👋 Welcome to My Portfolio</span>
+      <h2 class="fw-bold mb-3">Hi, I’m <span class="text-warning">Vaishnavi</span></h2>
+      <p class="lead mb-4">
+        A passionate Junior Web Developer crafting clean, modern, and interactive web experiences.
+      </p>
+      <a href="#hero" class="btn btn-light btn-lg shadow-sm">Explore My Work ↓</a>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container">
+        <div class="row g-0 align-items-center">
+
+          <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
+            <div class="content-wrapper">
+              <h1 class="hero-title">Junior Web <span class="typed" data-typed-items="Developer, MERN Stack Developer"></span></h1>
+              <p class="lead">I’m a passionate and detail-oriented Junior Web Developer with over 1 year of hands-on experience in building responsive and user-friendly web applications. Skilled in frontend technologies like HTML5, CSS3, JavaScript, and React.js, I’ve developed multiple projects including a Resort Management System, E-commerce Platform, and corporate product websites.
+
+I enjoy transforming ideas into real-world solutions using clean code and modern frameworks. My current focus is enhancing my React skills and exploring backend development with Node.js and MongoDB.</p>
+
+              <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                  <span class="purecounter" data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="2">0</span>
+                  <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                  <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="2">0</span>
+                  <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <span class="purecounter" data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="2">0</span>
+                  <span class="stat-label">Happy Clients</span>
+                </div>
+              </div>
+
+              <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+              </div>
+
+              <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-delay="200">
+            <div class="image-container">
+              <div class="floating-elements">
+                <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="bi bi-palette"></i>
+                  <span>React.js Developer</span>
+                </div>
+                <div class="floating-card card-2" data-aos="zoom-in" data-aos-delay="400">
+                  <i class="bi bi-code-slash"></i>
+                  <span>Frontend Developer</span>
+                </div>
+                <div class="floating-card card-3" data-aos="zoom-in" data-aos-delay="500">
+                  <i class="bi bi-lightning"></i>
+                  <span>MERN Stack Developer</span>
+                </div>
+              </div>
+              <img src="assets/img/p2.jpg" alt="Portfolio Hero" class="img-fluid hero-main-image">
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>About</h2>
+        <p>A short story about your journey and skills.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+            <div class="profile-image-wrapper">
+              <div class="profile-image">
+                <img src="assets/img/p2.jpg" alt="Profile" class="img-fluid">
+              </div>
+              <div class="signature-section">
+                <img src="" alt="Signature" class="signature">
+                <p class="quote">Building meaningful digital experiences through creative code.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-content">
+              <div class="intro">
+                <h2>Hi, I'm Vaishnavi - a Web Developer</h2>
+                <p>I started my journey in web development one n+ years ago and since then, I have built projects using HTML, CSS, JavaScript, React.js, and MERN stack.
+           I enjoy learning new technologies and turning ideas into real-world digital solutions. My focus is on creating clean, efficient, and scalable code.</p>
+              </div>
+
+              <div class="skills-grid">
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="skill-icon">
+                    <i class="bi bi-palette"></i>
+                  </div>
+                  <h4>React.js Developer</h4>
+                    <p>I build clean, modern, and responsive web applications using React.js, Tailwind CSS, and modern JavaScript. 
+I focus on performance, reusable components, and delivering a smooth user experience.</p>
+
+                </div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+                  <div class="skill-icon">
+                    <i class="bi bi-code-slash"></i>
+                  </div>
+                  <h4>Frontend Dev</h4>
+                    <p>Skilled in building responsive and interactive web apps with HTML, CSS, JavaScript, React.js, and Bootstrap.</p>
+                  </div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="skill-icon">
+                    <i class="bi bi-camera"></i>
+                  </div>
+                  <h4>Backend Development</h4>
+  <p>Experienced in creating APIs and server-side logic using Node.js, Express.js, and MongoDB for full-stack projects.</p>
+</div>
+              </div>
+
+              <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
+                
+                <div class="timeline-item">
+                  <div class="year">2024</div>
+                  <div class="description">Joined SPCL Info Tech as Junior Web Developer.<br>Location :-   Warje Pune.</div>
+                </div>
+
+              <div class="cta-section" data-aos="fade-up" data-aos-delay="400">
+                <div class="fun-fact">
+                  <span class="emoji">☕</span>
+                  <span class="text">Coffee-fueled designer based in Portland</span>
+                </div>
+
+                 <div class="fun-fact">
+                  <span class="emoji">💻</span>
+                  <span class="text"> Always learning and building cool projects</span>
+                </div>
+              
+
+                <div class="action-buttons">
+                  <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                  <a href="#" class="btn btn-outline">Download Resume</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="skills-grid">
+              <div class="row g-4">
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="200">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-code-slash"></i>
+                      <h3>Frontend Development</h3>
+                    </div>
+                    <div class="skills-animation">
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">HTML/CSS</span>
+                          <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">JavaScript</span>
+                          <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">React.js</span>
+                          <span class="skill-percentage">65%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Frontend Card -->
+                </div>
+
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="300">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-server"></i>
+                      <h3>Backend Development</h3>
+                    </div>
+                    <div class="skills-animation">
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">MongoDB</span>
+                          <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Node.js</span>
+                          <span class="skill-percentage">50%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">MySQL</span>
+                          <span class="skill-percentage">50%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Backend Card -->
+                </div>
+
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="400">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-palette"></i>
+                      <h3>Design &amp; Tools</h3>
+                    </div>
+                    <div class="skills-animation">
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Figma</span>
+                          <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Photoshop</span>
+                          <span class="skill-percentage">50%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Canva</span>
+                          <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Design Card -->
+                </div>
+
+                <div class="col-md-6" data-aos="flip-left" data-aos-delay="500">
+                  <div class="skill-card">
+                    <div class="skill-header">
+                      <i class="bi bi-cloud"></i>
+                      <h3>Cloud &amp; DevOps</h3>
+                    </div>
+                    <div class="skills-animation">
+                      
+                      <div class="skill-item">
+                        <div class="skill-info">
+                          <span class="skill-name">Git-hub</span>
+                          <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End DevOps Card -->
+                </div>
+              </div>
+            </div><!-- End Skills Grid -->
+          </div>
+
+          <div class="col-lg-4">
+            <div class="skills-summary" data-aos="fade-left" data-aos-delay="200">
+              <h3>Professional Expertise</h3>
+              <p> I am a passionate <strong>Web Developer</strong> with 1 year of hands-on experience in building
+    modern, responsive, and user-friendly web applications. I specialize in
+    <strong>Frontend development (React.js, JavaScript, Bootstrap, Tailwind)</strong> and have
+    practical knowledge of <strong>Backend development (Node.js, Express, MongoDB)</strong>.
+    
+    
+
+              <div class="summary-stats">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="stat-circle">
+                    <i class="bi bi-trophy"></i>
+                  </div>
+                  <div class="stat-info">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Years Experience</span>
+                  </div>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="stat-circle">
+                    <i class="bi bi-diagram-3"></i>
+                  </div>
+                  <div class="stat-info">
+                    <span class="stat-number">20</span>
+                    <span class="stat-label">Projects Completed</span>
+                  </div>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="stat-circle">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <div class="stat-info">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Happy Clients</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skills-badges" data-aos="fade-up" data-aos-delay="600">
+                <h4>Certifications</h4>
+                <div class="badge-list">
+                  <div class="skill-badge">Frontend Web Development -Endurekha</div>
+                  <div class="skill-badge">TCS NQT Certificate</div>
+                  
+                  <div class="skill-badge">UI/UX Design</div>
+                </div>
+              </div>
+            </div><!-- End Skills Summary -->
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Resume</h2>
+          <p>I have 1 year of experience in building and delivering web applications using modern technologies.</p>
+
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="experience-section">
+              <div class="section-header">
+                <h2><i class="bi bi-briefcase"></i> Professional Journey</h2>
+              </div>
+
+              <div class="experience-cards">
+                <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="card-header">
+                    <div class="role-info">
+                      <h3>Junior WebDeveloper</h3>
+                      <h4>SPCL Infotech Private Limited Warje Pune.</h4>
+                    </div>
+                    <span class="duration">2025 - Present</span>
+                  </div>
+                  <div class="card-body">
+                    <ul class="achievements">
+                      <li>Developed responsive web applications using HTML, CSS, Javascript, Bootstrap,React.js, Node.js, and MongoDB.</li>
+                      <li>Worked Live websites e-commerces and consultancy website projects.</li>
+                      <li>Improved website performance and user experience by optimizing frontend code.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="experience-card" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="card-header">
+                    <div class="role-info">
+                      <h3>Freelance Web Developer</h3>
+                      <h4>Self-Employed</h4>
+                    </div>
+                    <span class="duration">In My Free Time</span>
+                  </div>
+                  <div class="card-body">
+                    <p>
+      ✔ Designed and developed water websites for clients.<br>
+      ✔ Built a restaurant management system with stay and guest registration features.<br>
+    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="education-section">
+              <div class="section-header">
+                <h2><i class="bi bi-mortarboard"></i> Academic Excellence</h2>
+              </div>
+
+              <div class="education-timeline">
+                <div class="timeline-track"></div>
+
+                <div class="education-item" data-aos="slide-up" data-aos-delay="300">
+                  <div class="timeline-marker"></div>
+                  <div class="education-content">
+                    <div class="degree-header">
+                      <h3>MCA -Master of Computer Application</h3>
+                      <span class="year">2022</span>
+                    </div>
+                    <h4 class="institution">Shivaji University of Kolhapur</h4>
+                    <p>
+  Completed MCA with a focus on <strong>software development, web technologies, and database management</strong>. 
+  Gained practical experience through academic projects and built a strong foundation in programming and problem-solving.
+</p>
+                  </div>
+                </div>
+
+                <div class="education-item" data-aos="slide-up" data-aos-delay="400">
+                  <div class="timeline-marker"></div>
+                  <div class="education-content">
+                    <div class="degree-header">
+                      <h3>BCA -Bachelor of Computer Application</h3>
+                      <span class="year">2020</span>
+                    </div>
+                    <h4 class="institution">DKASC College of Ichalkaranji</h4>
+                    <p>Gained fundamental knowledge of <strong>programming, and web development</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="projects" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Projects</h2>
+          <p>Here are some of the key projects I have worked on, demonstrating my skills in web development, problem-solving, and modern technologies.</p>
+
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4"> 
+
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item">
+              <div class="icon">
+            <i class="bi bi-droplet project-icon"></i>
+              </div> 
+              <h3>MK-H2OH-Website</h3>
+              <p>MK H2OH is a clean, modern, and responsive product website showcasing premium water bottles with product features, benefits, and a user-friendly browsing experience.</p>
+              <div class="card-links">
+                <a href="#" class="link-item">
+                  Learn More
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item">
+              <div class="icon">
+             <i class="bi bi-cloud project-icon"></i>
+              </div>
+              <h3>Cloud-Notes</h3>
+              <p>ClodeNotes is a full-stack note-taking application built with React for the frontend and Node.js for the backend. It offers secure user authentication with email notifications, allowing users to create, edit, and manage notes. Tech Stack: React (Frontend), Node.js + Express (Backend), MongoDB (Database)</p>
+              <div class="card-links">
+                <a href="#" class="link-item">
+                  Learn More
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item">
+              <div class="icon">
+             <i class="bi bi-graph-up project-icon"></i>
+              </div>
+              <h3>HeadlineHub-website</h3>
+              <p>Live HeadlineHub is a React-based web application that displays the 2025 live top news of India. The platform features a clean navigation bar and organizes news category-wise, making it easy to browse through different sections. Tech Stack: React (Frontend) Features: 1. Category-wise news filtering </p>
+              <div class="card-links">
+                <a href="#" class="link-item">
+                  Learn More
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Card 4 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item">
+              <div class="icon">
+              <i class="bi bi-cpu"></i>
+              </div>
+              <h3>ProText Website</h3>
+              <p>ProText is a simple and powerful web-based text utility tool built with React.js. It helps users transform, format, and analyze text efficiently with a clean and responsive UI. Features 🔠 Convert text to Uppercase / Lowercase / Title Case 📋 Copy text with one click </p>
+              <div class="card-links">
+                <a href="#" class="link-item">
+                  Learn More
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Card 5 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item">
+              <div class="icon">
+                <i class="bi bi-house-heart"></i>
+              </div>
+              <h3>Sangram Resort</h3>
+              <p>Sangram Resort Website is a modern and user-friendly platform where visitors can explore resort facilities, book tables, check upcoming events, discover chefs, and browse the restaurant’s menu online.</p>
+              <div class="card-links">
+                <a href="" class="link-item">
+                  Learn More
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        
+
+          <!-- Card 6 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item">
+              <div class="icon">
+                <i class="bi bi-gem"></i>
+              </div>
+              <h3>Pramanik Sonar</h3>
+              <p>A full-stack jewelry e-commerce platform with product collections, offers, secure checkout, and customer-friendly navigation. Integrated with a database to manage products, orders, and user details efficiently.</p>
+              <div class="card-links">
+                <a href="#" class="link-item">
+                  Learn More
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Portfolio Section -->
+    <section id="mydigitalcreations " class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>📂 My Digital Creations </h2><br>
+        <p>
+          ✨“A showcase of my web development journey, blending creativity with modern technologies.”<br>
+
+          ✨“Here are some projects I’ve worked on, demonstrating skills in design, development, and problem-solving.”
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+            <li data-filter="*" class="filter-active">
+              <i class="bi bi-grid-3x3"></i> All Projects
+            </li>
+            <li data-filter=".filter-ui">
+              UI/UX
+            </li>
+            <li data-filter=".filter-development">
+              Development
+            </li>
+            <li data-filter=".filter-photography">
+              Photography
+            </li>
+            <li data-filter=".filter-marketing">
+              Marketing
+            </li>
+          </ul>
+
+          <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="https://media.istockphoto.com/id/1493296894/photo/woman-holding-bottle-of-drink-on-orange-background-closeup.jpg?s=612x612&w=0&k=20&c=V94A3VeGuE29dvyw8XriER_UM5JEmSrvUJpBSwxnTjA=" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">UI/UX Design</div>
+                      <h3 class="entry-title">MK-H2OH-Website (product UI design)</h3>
+                      <div class="entry-links">
+                        <a href="https://meenakanchan.netlify.app/" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="https://meenakanchan.netlify.app/">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bm90ZWJvb2t8ZW58MHx8MHx8fDA%3D">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Development</div>
+                      <h3 class="entry-title">Cloud Notes (Full-stack MERN)</h3>
+                      <div class="entry-links">
+                        <a href="https://vaishnavi-khumbhar.github.io/Cloud-Notes/" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: E-Learning Platform; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="https://vaishnavi-khumbhar.github.io/Cloud-Notes/">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="https://images.pexels.com/photos/7568299/pexels-photo-7568299.jpeg" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Development</div>
+                      <h3 class="entry-title">HeadlineHub Website (REACT Daily-news app)</h3>
+                      <div class="entry-links">
+                        <a href="https://vaishnavi-khumbhar.github.io/HeadlineHub-website/" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: E-Learning Platform; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="https://vaishnavi-khumbhar.github.io/HeadlineHub-website/">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="data:image/jpeg;base64,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" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Photography</div>
+                      <h3 class="entry-title">Consultancy Website</h3>
+                      <div class="entry-links">
+                        <a href="https://peaceful-syrniki-ed3634.netlify.app/" class="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Urban Architecture; description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="https://peaceful-syrniki-ed3634.netlify.app/">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="https://media.istockphoto.com/id/1076283186/photo/elegantly-dressed-woman-makes-handmade-necklaces-working-with-needles-and-thread-in-workshop.jpg?s=612x612&w=0&k=20&c=wBvo4A2aKa8IuPaJjdlZvPOIKfjefr7ffrGHRUiLWys=" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Marketing</div>
+                      <h3 class="entry-title">Pramanik Sonar Website (E-commerce jewelry)</h3>
+                      <div class="entry-links">
+                        <a href="http://demo.pramaniksonar.com/contact.html" class="glightbox" data-gallery="portfolio-gallery-marketing" data-glightbox="title: Social Media Campaign; description: Quis autem vel eum iure reprehenderit qui in ea voluptate.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="http://demo.pramaniksonar.com/contact.html">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="https://media.istockphoto.com/id/1673085805/photo/young-man-using-smart-phone-social-media-concept.jpg?s=612x612&w=0&k=20&c=y8QSL6d0KJk2BGbUql7h7a9g0Ipv8vVvzKphk1I0j4Q=" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">UI/UX Design</div>
+                      <h3 class="entry-title">ProText Website (REACT - Text Utility Tool)</h3>
+                      <div class="entry-links">
+                        <a href="https://vaishnavi-khumbhar.github.io/ProText/" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Smart Home Interface; description: At vero eos et accusamus et iusto odio dignissimos ducimus.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="https://vaishnavi-khumbhar.github.io/ProText/">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="data:image/jpeg;base64,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" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">UI/UX Design</div>
+                      <h3 class="entry-title">Spotify-Clone </h3>
+                      <div class="entry-links">
+                        <a href="https://vaishnavi-khumbhar.github.io/spotify-clone/" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Smart Home Interface; description: At vero eos et accusamus et iusto odio dignissimos ducimus.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="https://vaishnavi-khumbhar.github.io/spotify-clone/">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+
+           <!----> <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+              <article class="portfolio-entry">
+                <figure class="entry-image">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrolqvgEQ_sek3ahsNuLK31VcVUfd_Mdm7dg&s" class="img-fluid" alt="" loading="lazy">
+                  <div class="entry-overlay">
+                    <div class="overlay-content">
+                      <div class="entry-meta">Development</div>
+                      <h3 class="entry-title">M.A Safety Website (MERN STACK)</h3>
+                      <div class="entry-links">
+                        <a href="https://rococo-monstera-aa2857.netlify.app/" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Cloud Management System; description: Temporibus autem quibusdam et aut officiis debitis.">
+                          <i class="bi bi-arrows-angle-expand"></i>
+                        </a>
+                        <a href="https://rococo-monstera-aa2857.netlify.app/">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </article>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Success Stories</h2><br>
+        <p>Short highlights from my work and achievements.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-12">
+            <div class="critic-reviews" data-aos="fade-up" data-aos-delay="300">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="critic-review">
+                    <div class="stars">
+                      
+                    </div>
+                     <div class="critic-name">🏆 Achievements & Certifications</div><br>
+                      “A glimpse of my milestones and continuous learning journey.”
+                    <p>Frontend Web Development — Endurekha.<br>
+                       TCS NQT Certificate.<br>
+                       HackerRank Certificates.
+                    </p>
+                    <div class="critic-info">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="critic-review">
+                    <div class="review-quote"></div>
+                    <div class="stars">
+                      
+                    </div>
+                    <div class="critic-name">🛠️ Services / What I Do </div><br>
+                    <p> 💻 Web Development<br>
+                      💻UI/UX Designing<br>
+                      💻MERN Full Stack Apps<br>
+                      💻Responsive Design</p>
+                    <div class="critic-info">
+                    </div>
+                  </div>
+                </div>
+                
+                
+            <div class="testimonials-container">
+              <div class="swiper testimonials-slider init-swiper" data-aos="fade-up" data-aos-delay="400">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": 1,
+                    "spaceBetween": 30,
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "breakpoints": {
+                      "768": {
+                        "slidesPerView": 2
+                      },
+                      "992": {
+                        "slidesPerView": 3
+                      }
+                    }
+                  }
+                </script>
+<br><br><br>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        
+                      </div>
+                       <h3>💼Career Goals / Mission Statement 🎯</h3><br>
+                      <p>
+                        Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat.
+                      </p>
+                      <div class="testimonial-profile">
+                        <img src="assets/img/person/person-f-1.webp" alt="Reviewer" class="img-fluid rounded-circle">
+                        <div>
+                         
+                          <h4>Book Enthusiast</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End testimonial item -->
+              </div>
+    </section><!-- /Testimonials Section -->
+
+     <hr>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Contact</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5">
+            <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+              <h3>Contact Info</h3>
+              <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+
+              <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="content">
+                  <h4>Pune</h4>
+                  <p>Warje</p>
+                  <p> York>
+                </div>
+              </div>
+
+              <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <div class="content">
+                  <h4>Phone Number</h4>
+                  <p>8799871834</p>
+                </div>
+              </div>
+
+              <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div class="content">
+                  <h4>Email Address</h4>
+                  <p>vaishnavikumbhar1711@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+              <h3>Get In Touch</h3>
+              <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+
+              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                    <button type="submit" class="btn">Send Message</button>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p> <span>Thank You !</span> <strong class="px-1 sitename">For</strong> <span> Visiting.</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Particles.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 90 },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.6, "random": true },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "bounce" }
+  },
+  "interactivity": {
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "push" }
+    },
+    "modes": {
+      "grab": { "distance": 150, "line_linked": { "opacity": 0.6 } },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
 </body>
+
 </html>
